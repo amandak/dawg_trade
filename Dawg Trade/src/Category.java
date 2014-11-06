@@ -1,4 +1,4 @@
 
-public class Category {
+public interface Category {
 
 }

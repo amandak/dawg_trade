@@ -1,4 +1,4 @@
 
-public class Persistable {
+public interface Persistable {
 
 }

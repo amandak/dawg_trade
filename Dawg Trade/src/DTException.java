@@ -1,4 +1,4 @@
 
-public class DTException {
+public interface DTException {
 
 }

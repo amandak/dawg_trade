@@ -1,4 +1,4 @@
 
-public class Attribute {
+public interface Attribute {
 
 }

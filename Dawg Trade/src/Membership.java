@@ -1,4 +1,4 @@
 
-public class Membership {
+public interface Membership {
 
 }

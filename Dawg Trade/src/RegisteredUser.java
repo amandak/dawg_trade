@@ -1,9 +1,10 @@
 
-public class RegisteredUser {
+public interface RegisteredUser {
 
-	public long getID() {
-		// TODO Auto-generated method stub
-		return -1;
-	}
+	/**
+	 * Get the id of this RegisteredUser.
+	 * @return
+	 */
+	public long getID();
 
 }

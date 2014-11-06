@@ -1,4 +1,4 @@
 
-public class ObjectModel {
+public interface ObjectModel {
 
 }

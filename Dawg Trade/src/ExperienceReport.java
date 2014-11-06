@@ -1,4 +1,4 @@
 
-public class ExperienceReport {
+public interface ExperienceReport {
 
 }
