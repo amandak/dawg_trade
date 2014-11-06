@@ -1,3 +1,5 @@
+import java.util.Date;
+
 /**
  * This class represents a bid in the Dawg Trades system.
  * @author emilywall
@@ -6,18 +8,44 @@
 public class Bid {
 	
 	/**------------ Instance Variables ------------**/
-	private double amount;
+	private float amount;
 	Auction auction; 
 	RegisteredUser bidder; 
+	Date date; 
 	
 	/**
 	 * Constructor for Bid object. Initializes instance variables.
 	 * @param amount
 	 */
-	public Bid(Auction auction, RegisteredUser bidder, double amount) {
+	public Bid(Auction auction, RegisteredUser bidder, float amount) {
 		this.setAuction(auction); 
-		this.setBidder(bidder); 
+		this.setRegisteredUser(bidder); 
 		this.setAmount(amount); 
+		this.setDate(new Date()); 
+	}
+	
+	/**
+	 * Return true if this bid is the winning bid in its Auction.
+	 * @return
+	 */
+	public boolean isWinning() {
+		if (getAuction().getWinningBid().equals(this))
+			return true; 
+		else
+			return false; 
+	}
+	
+	/**
+	 * Determine if this Bid and the other Bid are the same. 
+	 * @param otherBid
+	 * @return
+	 */
+	public boolean equals(Bid otherBid) {
+		if (this.getAmount() == otherBid.getAmount() 
+				&& this.getAuction().getItemID() == otherBid.getAuction().getItemID()
+				&& this.getRegisteredUser().getID() == otherBid.getRegisteredUser().getID())
+			return true; 
+		else return false; 
 	}
 	
 	/**------------ Mutators ------------**/
@@ -34,7 +62,7 @@ public class Bid {
 	 * Set the bidder of this Bid. 
 	 * @param bidder
 	 */
-	public void setBidder(RegisteredUser bidder) {
+	public void setRegisteredUser(RegisteredUser bidder) {
 		this.bidder = bidder;
 	}
 	
@@ -42,8 +70,16 @@ public class Bid {
 	 * Set the amount of this Bid. 
 	 * @param amount
 	 */
-	public void setAmount(double amount) {
+	public void setAmount(float amount) {
 		this.amount = amount; 
+	}
+	
+	/**
+	 * Set the date of this Bid. 
+	 * @param date
+	 */
+	public void setDate(Date date) {
+		this.date = date; 
 	}
 	
 	/**------------ Accessors ------------**/
@@ -60,7 +96,7 @@ public class Bid {
 	 * Get the bidder of this Bid; 
 	 * @return
 	 */
-	public RegisteredUser getBidder() {
+	public RegisteredUser getRegisteredUser() {
 		return bidder; 
 	}
 	
@@ -68,7 +104,15 @@ public class Bid {
 	 * Get the amount of this Bid. 
 	 * @return
 	 */
-	public double getAmount() {
+	public float getAmount() {
 		return amount; 
+	}
+	
+	/**
+	 * Get the date of this Bid. 
+	 * @return
+	 */
+	public Date getDate() {
+		return date; 
 	}
 }

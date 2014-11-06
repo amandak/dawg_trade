@@ -9,7 +9,7 @@ public class Item {
 
 	/**------------ Instance Variables ------------**/
 	private String id, name, description; 
-	private RegisteredUser owner; 
+	private long ownerID; 
 	private Category category; 
 	private List<Attribute> attributes; 
 	
@@ -19,11 +19,11 @@ public class Item {
 	 * @param name
 	 * @param description
 	 */
-	public Item(String id, String name, String description, RegisteredUser owner, Category category, List<Attribute> attributes) {
+	public Item(String id, String name, String description, long ownerID, Category category, List<Attribute> attributes) {
 		this.setID(id); 
 		this.setName(name); 
 		this.setDescription(description); 
-		this.setOwner(owner);
+		this.setOwnerID(ownerID);
 		this.setCategory(category); 
 		this.setAttributes(attributes); 
 	}
@@ -55,11 +55,11 @@ public class Item {
 	}
 	
 	/**
-	 * Set the owner of this Item.
+	 * Set the ownerID of this Item.
 	 * @param owner
 	 */
-	public void setOwner(RegisteredUser owner) {
-		this.owner = owner; 
+	public void setOwnerID(long ownerID) {
+		this.ownerID = ownerID; 
 	}
 	
 	/**
@@ -106,11 +106,11 @@ public class Item {
 	}
 	
 	/**
-	 * Get the owner of this Item. 
+	 * Get the ownerID of this Item. 
 	 * @return
 	 */
-	public RegisteredUser getOwner() {
-		return owner; 
+	public long getOwnerID() {
+		return ownerID; 
 	}
 	
 	/**
