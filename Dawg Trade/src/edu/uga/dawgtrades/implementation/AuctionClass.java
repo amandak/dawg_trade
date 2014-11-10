@@ -1,3 +1,6 @@
+package edu.uga.dawgtrades.implementation;
+import edu.uga.dawgtrades.model.Auction;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,7 +16,7 @@ public class AuctionClass implements Auction {
 	/**------------ Instance Variables ------------**/
 	private float minPrice; 
 	private Date expiration; 
-	private long itemID; 
+	private long id, itemId; 
 	private List<BidClass> bids;
 	
 	/**
@@ -21,8 +24,9 @@ public class AuctionClass implements Auction {
 	 * @param minPrice
 	 * @param expiration
 	 */
-	public AuctionClass(long itemID, float minPrice, Date expiration) {
-		this.setItemID(itemID); 
+	public AuctionClass(long id, long itemId, float minPrice, Date expiration) {
+		this.setId(id); 
+		this.setItemId(itemId); 
 		this.setMinPrice(minPrice); 
 		this.setExpiration(expiration); 
 		bids = new ArrayList<BidClass>(); 
@@ -64,13 +68,20 @@ public class AuctionClass implements Auction {
 	}
 	
 	/**------------ Mutators ------------**/
+
+	/**
+	 * Set the id of this Auction.
+	 */
+	public void setId(long id) {
+		this.id = id; 
+	}
 	
 	/**
 	 * Set the item id of this Auction.
 	 * @param itemID
 	 */
-	public void setItemID(long itemID) {
-		this.itemID = itemID; 
+	public void setItemId(long itemId) {
+		this.itemId = itemId; 
 	}
 	
 	/**
@@ -92,11 +103,18 @@ public class AuctionClass implements Auction {
 	/**------------ Accessors ------------**/
 
 	/**
+	 * Get the id of this Auction.
+	 */
+	public long getId() {
+		return id; 
+	}
+
+	/**
 	 * Get the itemID of this Auction.
 	 * @return
 	 */
-	public long getItemID() {
-		return itemID; 
+	public long getItemId() {
+		return itemId; 
 	}
 	
 	/**
@@ -113,5 +131,11 @@ public class AuctionClass implements Auction {
 	 */
 	public Date getExpiration() {
 		return expiration; 
+	}
+
+	@Override
+	public boolean isPersistent() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

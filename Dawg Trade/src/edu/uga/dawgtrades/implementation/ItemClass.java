@@ -1,3 +1,6 @@
+package edu.uga.dawgtrades.implementation;
+import edu.uga.dawgtrades.model.Item;
+
 import java.util.List;
 
 /**
@@ -8,8 +11,8 @@ import java.util.List;
 public class ItemClass implements Item {
 
 	/**------------ Instance Variables ------------**/
-	private String id, name, description; 
-	private long ownerID; 
+	private String name, description; 
+	private long id, ownerId; 
 	private CategoryClass category; 
 	private List<AttributeClass> attributes; 
 	
@@ -19,11 +22,11 @@ public class ItemClass implements Item {
 	 * @param name
 	 * @param description
 	 */
-	public ItemClass(String id, String name, String description, long ownerID, CategoryClass category, List<AttributeClass> attributes) {
-		this.setID(id); 
+	public ItemClass(long id, String name, String description, long ownerId, CategoryClass category, List<AttributeClass> attributes) {
+		this.setId(id); 
 		this.setName(name); 
 		this.setDescription(description); 
-		this.setOwnerID(ownerID);
+		this.setOwnerId(ownerId);
 		this.setCategory(category); 
 		this.setAttributes(attributes); 
 	}
@@ -34,7 +37,7 @@ public class ItemClass implements Item {
 	 * Set the id of this Item.
 	 * @param id
 	 */
-	public void setID(String id) {
+	public void setId(long id) {
 		this.id = id; 
 	}
 	
@@ -47,19 +50,21 @@ public class ItemClass implements Item {
 	}
 	
 	/**
+	 * Set the ownerID of this Item.
+	 * @param owner
+	 */
+	@Override
+	public void setOwnerId(long ownerId) {
+		this.ownerId = ownerId; 
+		
+	}
+	
+	/**
 	 * Set the description of this Item.
 	 * @param description
 	 */
 	public void setDescription(String description) {
 		this.description = description; 
-	}
-	
-	/**
-	 * Set the ownerID of this Item.
-	 * @param owner
-	 */
-	public void setOwnerID(long ownerID) {
-		this.ownerID = ownerID; 
 	}
 	
 	/**
@@ -85,7 +90,7 @@ public class ItemClass implements Item {
 	 * Get the id of this Item.
 	 * @return
 	 */
-	public String getID() {
+	public long getId() {
 		return id; 
 	}
 	
@@ -109,8 +114,8 @@ public class ItemClass implements Item {
 	 * Get the ownerID of this Item. 
 	 * @return
 	 */
-	public long getOwnerID() {
-		return ownerID; 
+	public long getOwnerId() {
+		return ownerId; 
 	}
 	
 	/**
@@ -127,6 +132,12 @@ public class ItemClass implements Item {
 	 */
 	public List<AttributeClass> getAttributes() {
 		return attributes; 
+	}
+
+	@Override
+	public boolean isPersistent() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }

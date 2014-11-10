@@ -1,3 +1,7 @@
+package edu.uga.dawgtrades.implementation;
+import edu.uga.dawgtrades.model.Bid;
+import edu.uga.dawgtrades.model.RegisteredUser;
+
 import java.util.Date;
 
 /**
@@ -9,15 +13,17 @@ public class BidClass implements Bid {
 	
 	/**------------ Instance Variables ------------**/
 	private float amount;
-	AuctionClass auction; 
-	RegisteredUserClass bidder; 
-	Date date; 
+	private long id; 
+	private AuctionClass auction; 
+	private RegisteredUserClass bidder; 
+	private Date date; 
 	
 	/**
 	 * Constructor for Bid object. Initializes instance variables.
 	 * @param amount
 	 */
-	public BidClass(AuctionClass auction, RegisteredUserClass bidder, float amount) {
+	public BidClass(long id, AuctionClass auction, RegisteredUserClass bidder, float amount) {
+		this.setId(id); 
 		this.setAuction(auction); 
 		this.setRegisteredUser(bidder); 
 		this.setAmount(amount); 
@@ -42,13 +48,20 @@ public class BidClass implements Bid {
 	 */
 	public boolean equals(BidClass otherBid) {
 		if (this.getAmount() == otherBid.getAmount() 
-				&& this.getAuction().getItemID() == otherBid.getAuction().getItemID()
-				&& this.getRegisteredUser().getID() == otherBid.getRegisteredUser().getID())
+				&& this.getAuction().getItemId() == otherBid.getAuction().getItemId()
+				&& this.getRegisteredUser().getId() == otherBid.getRegisteredUser().getId())
 			return true; 
 		else return false; 
 	}
 	
 	/**------------ Mutators ------------**/
+	
+	/**
+	 * Get the id of this Bid.
+	 */
+	public void setId(long id) {
+		this.id = id; 
+	}
 	
 	/**
 	 * Set the auction of this Bid. 
@@ -85,6 +98,13 @@ public class BidClass implements Bid {
 	/**------------ Accessors ------------**/
 
 	/**
+	 * Get the id of this Bid. 
+	 */
+	public long getId() {
+		return id; 
+	}
+	
+	/**
 	 * Get the auction of this Bid. 
 	 * @return
 	 */
@@ -114,5 +134,11 @@ public class BidClass implements Bid {
 	 */
 	public Date getDate() {
 		return date; 
+	}
+
+	@Override
+	public boolean isPersistent() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
