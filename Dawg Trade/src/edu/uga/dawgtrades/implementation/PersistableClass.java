@@ -4,22 +4,27 @@ import edu.uga.dawgtrades.model.Persistable;
 
 public class PersistableClass implements Persistable {
 
+	private long persistentId;
+	
 	@Override
 	public long getId() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return peristentID;
 	}
 
 	@Override
 	public void setId(long id) {
-		// TODO Auto-generated method stub
-		
+
+		persistentId = id;
 	}
 
 	@Override
 	public boolean isPersistent() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		if(this instanceof Persistable) 
+			return true;
+		else
+			return false;
 	}
 
 }

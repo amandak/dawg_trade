@@ -20,14 +20,12 @@ public class ObjectModelClass implements ObjectModel {
 	@Override
 	public Category createCategory(Category parent, String name)
 			throws DTException {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
 	public Category createCategory() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new Category();
 	}
 
 	@Override
@@ -52,14 +50,12 @@ public class ObjectModelClass implements ObjectModel {
 	@Override
 	public AttributeType createAttributeType(Category category, String name)
 			throws DTException {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
 	public AttributeType createAttributeType() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new AttributeType();
 	}
 
 	@Override
@@ -86,8 +82,8 @@ public class ObjectModelClass implements ObjectModel {
 
 	@Override
 	public Item createItem() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new Item();
 	}
 
 	@Override
@@ -117,8 +113,8 @@ public class ObjectModelClass implements ObjectModel {
 
 	@Override
 	public Attribute createAttribute() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new Attribute();
 	}
 
 	@Override
@@ -142,8 +138,8 @@ public class ObjectModelClass implements ObjectModel {
 
 	@Override
 	public Auction createAuction() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new Auction();
 	}
 
 	@Override
@@ -175,8 +171,8 @@ public class ObjectModelClass implements ObjectModel {
 
 	@Override
 	public RegisteredUser createRegisteredUser() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new RegisteredUser();
 	}
 
 	@Override
@@ -209,8 +205,8 @@ public class ObjectModelClass implements ObjectModel {
 
 	@Override
 	public Bid createBid() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new Bid();
 	}
 
 	@Override
@@ -241,8 +237,8 @@ public class ObjectModelClass implements ObjectModel {
 
 	@Override
 	public ExperienceReport createExperienceReport() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new ExperienceReport();
 	}
 
 	@Override
@@ -275,8 +271,8 @@ public class ObjectModelClass implements ObjectModel {
 
 	@Override
 	public Membership createMembership() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new Membership();
 	}
 
 	@Override
@@ -293,8 +289,8 @@ public class ObjectModelClass implements ObjectModel {
 
 	@Override
 	public Category getParent(Category category) throws DTException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		category.getParentId();  
 	}
 
 	@Override
