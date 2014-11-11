@@ -13,7 +13,6 @@ public class BidClass extends PersistableClass implements Bid {
 	
 	/**------------ Instance Variables ------------**/
 	private float amount;
-	private long id; 
 	private AuctionClass auction; 
 	private RegisteredUserClass bidder; 
 	private Date date; 
@@ -22,14 +21,20 @@ public class BidClass extends PersistableClass implements Bid {
 	 * Constructor for Bid object. Initializes instance variables.
 	 * @param amount
 	 */
-	public BidClass(long id, AuctionClass auction, RegisteredUserClass bidder, float amount) {
-		this.setId(id); 
+	public BidClass(AuctionClass auction, RegisteredUserClass bidder, float amount) {
 		this.setAuction(auction); 
 		this.setRegisteredUser(bidder); 
 		this.setAmount(amount); 
 		this.setDate(new Date()); 
 	}
 	
+	/**
+	 * Default constructor for Bid object. 
+	 */
+	public BidClass() {
+		new BidClass(null, null, (float) 0.0); 
+	}
+
 	/**
 	 * Return true if this bid is the winning bid in its Auction.
 	 * @return
@@ -57,13 +62,6 @@ public class BidClass extends PersistableClass implements Bid {
 	/**------------ Mutators ------------**/
 	
 	/**
-	 * Get the id of this Bid.
-	 */
-	public void setId(long id) {
-		this.id = id; 
-	}
-	
-	/**
 	 * Set the auction of this Bid. 
 	 * @param auction
 	 */
@@ -84,7 +82,10 @@ public class BidClass extends PersistableClass implements Bid {
 	 * @param amount
 	 */
 	public void setAmount(float amount) {
-		this.amount = amount; 
+		if (amount > 0)
+			this.amount = amount; 
+		else
+			this.amount = (float) 0.0; 
 	}
 	
 	/**
@@ -97,13 +98,6 @@ public class BidClass extends PersistableClass implements Bid {
 	
 	/**------------ Accessors ------------**/
 
-	/**
-	 * Get the id of this Bid. 
-	 */
-	public long getId() {
-		return id; 
-	}
-	
 	/**
 	 * Get the auction of this Bid. 
 	 * @return

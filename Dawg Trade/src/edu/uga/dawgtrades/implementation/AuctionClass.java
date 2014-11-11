@@ -16,7 +16,7 @@ public class AuctionClass extends PersistableClass implements Auction {
 	/**------------ Instance Variables ------------**/
 	private float minPrice; 
 	private Date expiration; 
-	private long id, itemId; 
+	private long itemId; 
 	private List<BidClass> bids;
 	
 	/**
@@ -32,6 +32,13 @@ public class AuctionClass extends PersistableClass implements Auction {
 		bids = new ArrayList<BidClass>(); 
 	}
 	
+	/**
+	 * Default constructor for Auction.
+	 */
+	public AuctionClass() {
+		new AuctionClass(-1, -1, (float) 0.01, new Date());
+	}
+
 	/**
 	 * Return true if those auction is closed, false otherwise. 
 	 * @return
@@ -68,13 +75,6 @@ public class AuctionClass extends PersistableClass implements Auction {
 	}
 	
 	/**------------ Mutators ------------**/
-
-	/**
-	 * Set the id of this Auction.
-	 */
-	public void setId(long id) {
-		this.id = id; 
-	}
 	
 	/**
 	 * Set the item id of this Auction.
@@ -108,13 +108,6 @@ public class AuctionClass extends PersistableClass implements Auction {
 	}
 	
 	/**------------ Accessors ------------**/
-
-	/**
-	 * Get the id of this Auction.
-	 */
-	public long getId() {
-		return id; 
-	}
 
 	/**
 	 * Get the itemID of this Auction.

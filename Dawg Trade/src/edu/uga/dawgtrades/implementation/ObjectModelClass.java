@@ -15,19 +15,17 @@ import edu.uga.dawgtrades.model.ObjectModel;
 import edu.uga.dawgtrades.model.RegisteredUser;
 
 
-public class ObjectModelClass extends PersistableClass implements ObjectModel {
+public class ObjectModelClass implements ObjectModel {
 
 	@Override
 	public Category createCategory(Category parent, String name)
 			throws DTException {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
 	public Category createCategory() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new CategoryClass();
 	}
 
 	@Override
@@ -52,14 +50,12 @@ public class ObjectModelClass extends PersistableClass implements ObjectModel {
 	@Override
 	public AttributeType createAttributeType(Category category, String name)
 			throws DTException {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
 	public AttributeType createAttributeType() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new AttributeTypeClass();
 	}
 
 	@Override
@@ -86,8 +82,8 @@ public class ObjectModelClass extends PersistableClass implements ObjectModel {
 
 	@Override
 	public Item createItem() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new ItemClass();
 	}
 
 	@Override
@@ -117,8 +113,8 @@ public class ObjectModelClass extends PersistableClass implements ObjectModel {
 
 	@Override
 	public Attribute createAttribute() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new AttributeClass();
 	}
 
 	@Override
@@ -142,8 +138,8 @@ public class ObjectModelClass extends PersistableClass implements ObjectModel {
 
 	@Override
 	public Auction createAuction() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new AuctionClass();
 	}
 
 	@Override
@@ -175,8 +171,8 @@ public class ObjectModelClass extends PersistableClass implements ObjectModel {
 
 	@Override
 	public RegisteredUser createRegisteredUser() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new RegisteredUserClass();
 	}
 
 	@Override
@@ -209,8 +205,8 @@ public class ObjectModelClass extends PersistableClass implements ObjectModel {
 
 	@Override
 	public Bid createBid() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new BidClass();
 	}
 
 	@Override
@@ -241,8 +237,8 @@ public class ObjectModelClass extends PersistableClass implements ObjectModel {
 
 	@Override
 	public ExperienceReport createExperienceReport() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new ExperienceReportClass();
 	}
 
 	@Override
@@ -275,8 +271,8 @@ public class ObjectModelClass extends PersistableClass implements ObjectModel {
 
 	@Override
 	public Membership createMembership() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new MembershipClass();
 	}
 
 	@Override
@@ -293,8 +289,8 @@ public class ObjectModelClass extends PersistableClass implements ObjectModel {
 
 	@Override
 	public Category getParent(Category category) throws DTException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		category.getParentId();  
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package edu.uga.dawgtrades.implementation;
 import edu.uga.dawgtrades.model.Item;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ public class ItemClass extends PersistableClass implements Item {
 
 	/**------------ Instance Variables ------------**/
 	private String name, description; 
-	private long id, ownerId; 
+	private long ownerId; 
 	private CategoryClass category; 
 	private List<AttributeClass> attributes; 
 	
@@ -22,25 +23,23 @@ public class ItemClass extends PersistableClass implements Item {
 	 * @param name
 	 * @param description
 	 */
-	public ItemClass(long id, String name, String description, long ownerId, CategoryClass category, List<AttributeClass> attributes) {
-		this.setId(id); 
+	public ItemClass(String name, String description, long ownerId, CategoryClass category, List<AttributeClass> arrayList) {
 		this.setName(name); 
 		this.setDescription(description); 
 		this.setOwnerId(ownerId);
 		this.setCategory(category); 
-		this.setAttributes(attributes); 
+		this.setAttributes(arrayList); 
+	}
+	
+	/**
+	 * Default constructor for Item.
+	 */
+	public ItemClass() {
+		new ItemClass("", "", -1, null, new ArrayList<AttributeClass>());
 	}
 	
 /**------------ Mutators ------------**/
-	
-	/**
-	 * Set the id of this Item.
-	 * @param id
-	 */
-	public void setId(long id) {
-		this.id = id; 
-	}
-	
+
 	/**
 	 * Set the name of this Item.
 	 * @param name
@@ -90,14 +89,6 @@ public class ItemClass extends PersistableClass implements Item {
 	
 	
 	/**------------ Accessors ------------**/
-	
-	/**
-	 * Get the id of this Item.
-	 * @return
-	 */
-	public long getId() {
-		return id; 
-	}
 	
 	/**
 	 * Get the name of this Item.
