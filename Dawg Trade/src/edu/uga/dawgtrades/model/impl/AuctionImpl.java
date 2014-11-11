@@ -1,5 +1,7 @@
-package edu.uga.dawgtrades.implementation;
+package edu.uga.dawgtrades.model.impl;
 import edu.uga.dawgtrades.model.Auction;
+import edu.uga.dawgtrades.model.Bid;
+import edu.uga.dawgtrades.persist.impl.PersistableImpl;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,32 +13,32 @@ import java.util.List;
  * @author emilywall
  *
  */
-public class AuctionClass extends PersistableClass implements Auction {
+public class AuctionImpl extends PersistableImpl implements Auction {
 	
 	/**------------ Instance Variables ------------**/
 	private float minPrice; 
 	private Date expiration; 
 	private long itemId; 
-	private List<BidClass> bids;
+	private List<Bid> bids;
 	
 	/**
 	 * Constructor for Auction object. Initializes instance variables. 
 	 * @param minPrice
 	 * @param expiration
 	 */
-	public AuctionClass(long id, long itemId, float minPrice, Date expiration) {
+	public AuctionImpl(long id, long itemId, float minPrice, Date expiration) {
 		this.setId(id); 
 		this.setItemId(itemId); 
 		this.setMinPrice(minPrice); 
 		this.setExpiration(expiration); 
-		bids = new ArrayList<BidClass>(); 
+		bids = new ArrayList<Bid>(); 
 	}
 	
 	/**
 	 * Default constructor for Auction.
 	 */
-	public AuctionClass() {
-		new AuctionClass(-1, -1, (float) 0.01, new Date());
+	public AuctionImpl() {
+		new AuctionImpl(-1, -1, (float) 0.01, new Date());
 	}
 
 	/**
@@ -67,7 +69,7 @@ public class AuctionClass extends PersistableClass implements Auction {
 	 * Get the winning bid of this Auction.
 	 * @return
 	 */
-	public BidClass getWinningBid() {
+	public Bid getWinningBid() {
 		if (bids.isEmpty())
 			return null; 
 		else

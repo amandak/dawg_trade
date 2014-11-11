@@ -1,5 +1,7 @@
 package edu.uga.dawgtrades.model;
 
+import edu.uga.dawgtrades.persist.Persistable;
+
 /**
  * This interface represents an AttributeType describing a Category.  It has a collection of methods 
  * to read/write AttributeType's attributes. AttributeType participates in an association to Category, 

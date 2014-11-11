@@ -1,5 +1,8 @@
-package edu.uga.dawgtrades.implementation;
+package edu.uga.dawgtrades.model.impl;
+import edu.uga.dawgtrades.model.Attribute;
+import edu.uga.dawgtrades.model.Category;
 import edu.uga.dawgtrades.model.Item;
+import edu.uga.dawgtrades.persist.impl.PersistableImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,13 +12,13 @@ import java.util.List;
  * @author emilywall
  *
  */
-public class ItemClass extends PersistableClass implements Item {
+public class ItemImpl extends PersistableImpl implements Item {
 
 	/**------------ Instance Variables ------------**/
 	private String name, description; 
 	private long ownerId; 
-	private CategoryClass category; 
-	private List<AttributeClass> attributes; 
+	private Category category; 
+	private List<Attribute> attributes; 
 	
 	/**
 	 * Constructor for Item. Initializes instance variables.
@@ -23,7 +26,7 @@ public class ItemClass extends PersistableClass implements Item {
 	 * @param name
 	 * @param description
 	 */
-	public ItemClass(String name, String description, long ownerId, CategoryClass category, List<AttributeClass> arrayList) {
+	public ItemImpl(String name, String description, long ownerId, Category category, List<Attribute> arrayList) {
 		this.setName(name); 
 		this.setDescription(description); 
 		this.setOwnerId(ownerId);
@@ -34,8 +37,8 @@ public class ItemClass extends PersistableClass implements Item {
 	/**
 	 * Default constructor for Item.
 	 */
-	public ItemClass() {
-		new ItemClass("", "", -1, null, new ArrayList<AttributeClass>());
+	public ItemImpl() {
+		new ItemImpl("", "", -1, null, new ArrayList<Attribute>());
 	}
 	
 /**------------ Mutators ------------**/
@@ -75,7 +78,7 @@ public class ItemClass extends PersistableClass implements Item {
 	 * Set the category of this Item.
 	 * @param category
 	 */
-	public void setCategory(CategoryClass category) {
+	public void setCategory(Category category) {
 		this.category = category; 
 	}
 	
@@ -83,7 +86,7 @@ public class ItemClass extends PersistableClass implements Item {
 	 * Set the attributes of this Item.
 	 * @param attributes
 	 */
-	public void setAttributes(List<AttributeClass> attributes) {
+	public void setAttributes(List<Attribute> attributes) {
 		this.attributes = attributes;
 	}
 	
@@ -118,7 +121,7 @@ public class ItemClass extends PersistableClass implements Item {
 	 * Get the category of this Item.
 	 * @return
 	 */
-	public CategoryClass getCategory() {
+	public Category getCategory() {
 		return category; 
 	}
 	
@@ -126,8 +129,7 @@ public class ItemClass extends PersistableClass implements Item {
 	 * Get the attributes of this Item. 
 	 * @return
 	 */
-	public List<AttributeClass> getAttributes() {
+	public List<Attribute> getAttributes() {
 		return attributes; 
 	}
-	
 }

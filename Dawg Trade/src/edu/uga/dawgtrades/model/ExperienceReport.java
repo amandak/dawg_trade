@@ -2,6 +2,8 @@ package edu.uga.dawgtrades.model;
 
 import java.util.Date;
 
+import edu.uga.dawgtrades.persist.Persistable;
+
 /**
  * This interface represents an ExperienceReport filed by a RegisteredUser (reviewer) on a different 
  * RegisteredUser (reviewed).  It has a collection of methods to read/write ExperienceReport's attributes.

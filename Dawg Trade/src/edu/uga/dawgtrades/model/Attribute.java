@@ -1,5 +1,7 @@
 package edu.uga.dawgtrades.model;
 
+import edu.uga.dawgtrades.persist.Persistable;
+
 /**
  * This interface represents an Attribute describing an Item.  It has a collection of methods to 
  * read/write Attribute's attributes. Attribute participates in 2 associations, where the class at 

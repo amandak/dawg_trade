@@ -1,10 +1,9 @@
-package edu.uga.dawgtrades.implementation;
-import java.util.Date;
+package edu.uga.dawgtrades.model.impl;
+import edu.uga.dawgtrades.model.Category;
+import edu.uga.dawgtrades.persist.impl.PersistableImpl;
 
-import edu.uga.dawgtrades.model.Membership;
 
-
-public class MembershipClass extends PersistableClass implements Membership {
+public class CategoryImpl extends PersistableImpl implements Category {
 
 	@Override
 	public long getId() {
@@ -25,21 +24,27 @@ public class MembershipClass extends PersistableClass implements Membership {
 	}
 
 	@Override
-	public float getPrice() {
+	public String getName() {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
 
 	@Override
-	public void setPrice(float price) {
+	public void setName(String name) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Date getDate() {
+	public long getParentId() {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
+	}
+
+	@Override
+	public void setParentId(long parentId) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

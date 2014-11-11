@@ -1,8 +1,9 @@
-package edu.uga.dawgtrades.implementation;
-import edu.uga.dawgtrades.model.Category;
+package edu.uga.dawgtrades.model.impl;
+import edu.uga.dawgtrades.model.AttributeType;
+import edu.uga.dawgtrades.persist.impl.PersistableImpl;
 
 
-public class CategoryClass extends PersistableClass implements Category {
+public class AttributeTypeImpl extends PersistableImpl implements AttributeType {
 
 	@Override
 	public long getId() {
@@ -35,13 +36,13 @@ public class CategoryClass extends PersistableClass implements Category {
 	}
 
 	@Override
-	public long getParentId() {
+	public long getCategoryId() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public void setParentId(long parentId) {
+	public void setCategoryId(long categoryId) {
 		// TODO Auto-generated method stub
 		
 	}

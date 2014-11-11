@@ -7,7 +7,7 @@
 //
 //
 
-package edu.uga.dawgtrades.model;
+package edu.uga.dawgtrades.persist;
 
 
 /**

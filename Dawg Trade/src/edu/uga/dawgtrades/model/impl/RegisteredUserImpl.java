@@ -1,8 +1,9 @@
-package edu.uga.dawgtrades.implementation;
+package edu.uga.dawgtrades.model.impl;
 import edu.uga.dawgtrades.model.RegisteredUser;
+import edu.uga.dawgtrades.persist.impl.PersistableImpl;
 
 
-public class RegisteredUserClass extends PersistableClass implements RegisteredUser {
+public class RegisteredUserImpl extends PersistableImpl implements RegisteredUser {
 
 	public long getID() {
 		// TODO Auto-generated method stub

@@ -1,12 +1,13 @@
-package edu.uga.dawgtrades.implementation;
+package edu.uga.dawgtrades.model.impl;
 import java.util.Date;
 
 import edu.uga.dawgtrades.model.DTException;
 import edu.uga.dawgtrades.model.ExperienceReport;
 import edu.uga.dawgtrades.model.RegisteredUser;
+import edu.uga.dawgtrades.persist.impl.PersistableImpl;
 
 
-public class ExperienceReportClass extends PersistableClass implements ExperienceReport {
+public class ExperienceReportImpl extends PersistableImpl implements ExperienceReport {
 
 	@Override
 	public long getId() {

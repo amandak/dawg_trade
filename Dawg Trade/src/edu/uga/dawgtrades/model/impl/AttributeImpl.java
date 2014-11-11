@@ -1,8 +1,9 @@
-package edu.uga.dawgtrades.implementation;
+package edu.uga.dawgtrades.model.impl;
 import edu.uga.dawgtrades.model.Attribute;
+import edu.uga.dawgtrades.persist.impl.PersistableImpl;
 
 
-public class AttributeClass extends PersistableClass implements Attribute {
+public class AttributeImpl extends PersistableImpl implements Attribute {
 
 	@Override
 	public long getId() {

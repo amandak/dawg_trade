@@ -2,6 +2,8 @@ package edu.uga.dawgtrades.model;
 
 import java.util.Date;
 
+import edu.uga.dawgtrades.persist.Persistable;
+
 /**
  * This interface represents a Membership in DawgTrades.  It has a collection of methods to read/write 
  * Membership's attributes.  There must be only one Membership object (singleton).

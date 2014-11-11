@@ -1,4 +1,4 @@
-package edu.uga.dawgtrades.implementation;
+package edu.uga.dawgtrades.model.impl;
 import java.util.Date;
 import java.util.Iterator;
 
@@ -15,7 +15,7 @@ import edu.uga.dawgtrades.model.ObjectModel;
 import edu.uga.dawgtrades.model.RegisteredUser;
 
 
-public class ObjectModelClass implements ObjectModel {
+public class ObjectModelImpl implements ObjectModel {
 
 	@Override
 	public Category createCategory(Category parent, String name)
@@ -25,7 +25,7 @@ public class ObjectModelClass implements ObjectModel {
 	@Override
 	public Category createCategory() {
 		
-		return new CategoryClass();
+		return new CategoryImpl();
 	}
 
 	@Override
@@ -55,7 +55,7 @@ public class ObjectModelClass implements ObjectModel {
 	@Override
 	public AttributeType createAttributeType() {
 		
-		return new AttributeTypeClass();
+		return new AttributeTypeImpl();
 	}
 
 	@Override
@@ -83,7 +83,7 @@ public class ObjectModelClass implements ObjectModel {
 	@Override
 	public Item createItem() {
 		
-		return new ItemClass();
+		return new ItemImpl();
 	}
 
 	@Override
@@ -114,7 +114,7 @@ public class ObjectModelClass implements ObjectModel {
 	@Override
 	public Attribute createAttribute() {
 		
-		return new AttributeClass();
+		return new AttributeImpl();
 	}
 
 	@Override
@@ -139,7 +139,7 @@ public class ObjectModelClass implements ObjectModel {
 	@Override
 	public Auction createAuction() {
 		
-		return new AuctionClass();
+		return new AuctionImpl();
 	}
 
 	@Override
@@ -206,7 +206,7 @@ public class ObjectModelClass implements ObjectModel {
 	@Override
 	public Bid createBid() {
 		
-		return new BidClass();
+		return new BidImpl();
 	}
 
 	@Override
@@ -238,7 +238,7 @@ public class ObjectModelClass implements ObjectModel {
 	@Override
 	public ExperienceReport createExperienceReport() {
 		
-		return new ExperienceReportClass();
+		return new ExperienceReportImpl();
 	}
 
 	@Override
@@ -272,7 +272,7 @@ public class ObjectModelClass implements ObjectModel {
 	@Override
 	public Membership createMembership() {
 		
-		return new MembershipClass();
+		return new MembershipImpl();
 	}
 
 	@Override

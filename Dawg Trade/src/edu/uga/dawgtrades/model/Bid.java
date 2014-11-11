@@ -2,6 +2,8 @@ package edu.uga.dawgtrades.model;
 
 import java.util.Date;
 
+import edu.uga.dawgtrades.persist.Persistable;
+
 /**
  * This interface represents a Bid placed by a RegisteredUser on an Auction.  The It has a collection of 
  * methods to read/write Bid's attributes.

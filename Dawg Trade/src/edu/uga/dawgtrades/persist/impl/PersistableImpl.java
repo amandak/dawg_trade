@@ -1,8 +1,8 @@
-package edu.uga.dawgtrades.implementation;
-import edu.uga.dawgtrades.model.Persistable;
+package edu.uga.dawgtrades.persist.impl;
+import edu.uga.dawgtrades.persist.Persistable;
 
 
-public class PersistableClass implements Persistable {
+public class PersistableImpl implements Persistable {
 
 	private long persistentId;
 	

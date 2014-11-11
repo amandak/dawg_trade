@@ -1,5 +1,7 @@
 package edu.uga.dawgtrades.model;
 
+import edu.uga.dawgtrades.persist.Persistable;
+
 /**
  * This interface represents a RegisteredUser of DawgTrades.  It has a collection of methods to read/write 
  * RegisteredUser's attributes.

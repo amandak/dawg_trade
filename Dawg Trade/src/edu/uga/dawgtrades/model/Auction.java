@@ -3,6 +3,8 @@ package edu.uga.dawgtrades.model;
 
 import java.util.Date;
 
+import edu.uga.dawgtrades.persist.Persistable;
+
 /**
  * This interface represents an Auction of an Item.  It has a collection of methods to read/write Auction's attributes.
  * Auction participates in an association with Item, where the class at the other end has a multiplicity of 1.
@@ -63,4 +65,10 @@ public interface Auction
      * @param itemId the new identifier of this Auction's Item
      */
     void setItemId( long itemId );
+
+    /**
+     * Get the currently winning bid of this Auction.
+     * @return
+     */
+	Bid getWinningBid();
 }

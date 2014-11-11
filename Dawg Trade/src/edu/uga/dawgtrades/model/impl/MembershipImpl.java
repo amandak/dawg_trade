@@ -1,8 +1,11 @@
-package edu.uga.dawgtrades.implementation;
-import edu.uga.dawgtrades.model.AttributeType;
+package edu.uga.dawgtrades.model.impl;
+import java.util.Date;
+
+import edu.uga.dawgtrades.model.Membership;
+import edu.uga.dawgtrades.persist.impl.PersistableImpl;
 
 
-public class AttributeTypeClass extends PersistableClass implements AttributeType {
+public class MembershipImpl extends PersistableImpl implements Membership {
 
 	@Override
 	public long getId() {
@@ -23,27 +26,21 @@ public class AttributeTypeClass extends PersistableClass implements AttributeTyp
 	}
 
 	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setName(String name) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public long getCategoryId() {
+	public float getPrice() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public void setCategoryId(long categoryId) {
+	public void setPrice(float price) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public Date getDate() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

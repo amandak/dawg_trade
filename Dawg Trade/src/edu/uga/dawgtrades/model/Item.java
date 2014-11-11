@@ -1,5 +1,7 @@
 package edu.uga.dawgtrades.model;
 
+import edu.uga.dawgtrades.persist.Persistable;
+
 /**
  * This interface represents an Item of some Category and owner by a RegisteredUser. It has a collection of 
  * methods to read/write Item's attributes. The inherited getId() and setId() methods (from the Persistable 

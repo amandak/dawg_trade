@@ -1,6 +1,8 @@
-package edu.uga.dawgtrades.implementation;
+package edu.uga.dawgtrades.model.impl;
+import edu.uga.dawgtrades.model.Auction;
 import edu.uga.dawgtrades.model.Bid;
 import edu.uga.dawgtrades.model.RegisteredUser;
+import edu.uga.dawgtrades.persist.impl.PersistableImpl;
 
 import java.util.Date;
 
@@ -9,19 +11,19 @@ import java.util.Date;
  * @author emilywall
  *
  */
-public class BidClass extends PersistableClass implements Bid {
+public class BidImpl extends PersistableImpl implements Bid {
 	
 	/**------------ Instance Variables ------------**/
 	private float amount;
-	private AuctionClass auction; 
-	private RegisteredUserClass bidder; 
+	private Auction auction; 
+	private RegisteredUser bidder; 
 	private Date date; 
 	
 	/**
 	 * Constructor for Bid object. Initializes instance variables.
 	 * @param amount
 	 */
-	public BidClass(AuctionClass auction, RegisteredUserClass bidder, float amount) {
+	public BidImpl(Auction auction, RegisteredUser bidder, float amount) {
 		this.setAuction(auction); 
 		this.setRegisteredUser(bidder); 
 		this.setAmount(amount); 
@@ -31,8 +33,8 @@ public class BidClass extends PersistableClass implements Bid {
 	/**
 	 * Default constructor for Bid object. 
 	 */
-	public BidClass() {
-		new BidClass(null, null, (float) 0.0); 
+	public BidImpl() {
+		new BidImpl(null, null, (float) 0.0); 
 	}
 
 	/**
@@ -51,7 +53,7 @@ public class BidClass extends PersistableClass implements Bid {
 	 * @param otherBid
 	 * @return
 	 */
-	public boolean equals(BidClass otherBid) {
+	public boolean equals(BidImpl otherBid) {
 		if (this.getAmount() == otherBid.getAmount() 
 				&& this.getAuction().getItemId() == otherBid.getAuction().getItemId()
 				&& this.getRegisteredUser().getId() == otherBid.getRegisteredUser().getId())
@@ -65,7 +67,7 @@ public class BidClass extends PersistableClass implements Bid {
 	 * Set the auction of this Bid. 
 	 * @param auction
 	 */
-	public void setAuction(AuctionClass auction) {
+	public void setAuction(Auction auction) {
 		this.auction = auction; 
 	}
 	
@@ -73,7 +75,7 @@ public class BidClass extends PersistableClass implements Bid {
 	 * Set the bidder of this Bid. 
 	 * @param bidder
 	 */
-	public void setRegisteredUser(RegisteredUserClass bidder) {
+	public void setRegisteredUser(RegisteredUser bidder) {
 		this.bidder = bidder;
 	}
 	
@@ -102,7 +104,7 @@ public class BidClass extends PersistableClass implements Bid {
 	 * Get the auction of this Bid. 
 	 * @return
 	 */
-	public AuctionClass getAuction() {
+	public Auction getAuction() {
 		return auction; 
 	}
 	
@@ -110,7 +112,7 @@ public class BidClass extends PersistableClass implements Bid {
 	 * Get the bidder of this Bid; 
 	 * @return
 	 */
-	public RegisteredUserClass getRegisteredUser() {
+	public RegisteredUser getRegisteredUser() {
 		return bidder; 
 	}
 	
