@@ -46,14 +46,16 @@ public class ItemClass implements Item {
 	 * @param name
 	 */
 	public void setName(String name) {
-		this.name = name; 
+		if (name != null)
+			this.name = name; 
+		else
+			this.name = ""; 
 	}
 	
 	/**
 	 * Set the ownerID of this Item.
 	 * @param owner
 	 */
-	@Override
 	public void setOwnerId(long ownerId) {
 		this.ownerId = ownerId; 
 		
@@ -64,7 +66,10 @@ public class ItemClass implements Item {
 	 * @param description
 	 */
 	public void setDescription(String description) {
-		this.description = description; 
+		if (description != null)
+			this.description = description; 
+		else 
+			this.description = ""; 
 	}
 	
 	/**

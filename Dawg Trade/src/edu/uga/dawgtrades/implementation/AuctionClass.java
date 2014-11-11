@@ -89,7 +89,10 @@ public class AuctionClass implements Auction {
 	 * @param minPrice
 	 */
 	public void setMinPrice(float minPrice) {
-		this.minPrice = minPrice; 
+		if (minPrice > 0)
+			this.minPrice = minPrice; 
+		else
+			this.minPrice = (float) 0.01;
 	}
 	
 	/**
@@ -97,7 +100,11 @@ public class AuctionClass implements Auction {
 	 * @param expiration
 	 */
 	public void setExpiration(Date expiration) {
-		this.expiration = expiration; 
+		Date current = new Date(); 
+		if (expiration.after(current))
+			this.expiration = expiration; 
+		else
+			expiration = current; // auction immediately over if invalid expiration passed
 	}
 	
 	/**------------ Accessors ------------**/
