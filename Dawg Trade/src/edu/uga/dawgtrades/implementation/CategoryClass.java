@@ -2,7 +2,7 @@ package edu.uga.dawgtrades.implementation;
 import edu.uga.dawgtrades.model.Category;
 
 
-public class CategoryClass implements Category {
+public class CategoryClass extends PersistableClass implements Category {
 
 	@Override
 	public long getId() {

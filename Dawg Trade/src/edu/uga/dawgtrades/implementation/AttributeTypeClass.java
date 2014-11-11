@@ -2,7 +2,7 @@ package edu.uga.dawgtrades.implementation;
 import edu.uga.dawgtrades.model.AttributeType;
 
 
-public class AttributeTypeClass implements AttributeType {
+public class AttributeTypeClass extends PersistableClass implements AttributeType {
 
 	@Override
 	public long getId() {

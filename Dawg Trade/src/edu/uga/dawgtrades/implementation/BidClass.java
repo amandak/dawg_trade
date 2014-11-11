@@ -9,7 +9,7 @@ import java.util.Date;
  * @author emilywall
  *
  */
-public class BidClass implements Bid {
+public class BidClass extends PersistableClass implements Bid {
 	
 	/**------------ Instance Variables ------------**/
 	private float amount;
@@ -134,11 +134,5 @@ public class BidClass implements Bid {
 	 */
 	public Date getDate() {
 		return date; 
-	}
-
-	@Override
-	public boolean isPersistent() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 }

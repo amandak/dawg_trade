@@ -8,7 +8,7 @@ import java.util.List;
  * @author emilywall
  *
  */
-public class ItemClass implements Item {
+public class ItemClass extends PersistableClass implements Item {
 
 	/**------------ Instance Variables ------------**/
 	private String name, description; 
@@ -137,12 +137,6 @@ public class ItemClass implements Item {
 	 */
 	public List<AttributeClass> getAttributes() {
 		return attributes; 
-	}
-
-	@Override
-	public boolean isPersistent() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 	
 }

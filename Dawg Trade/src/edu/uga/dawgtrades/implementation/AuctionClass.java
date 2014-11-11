@@ -11,7 +11,7 @@ import java.util.List;
  * @author emilywall
  *
  */
-public class AuctionClass implements Auction {
+public class AuctionClass extends PersistableClass implements Auction {
 	
 	/**------------ Instance Variables ------------**/
 	private float minPrice; 
@@ -138,11 +138,5 @@ public class AuctionClass implements Auction {
 	 */
 	public Date getExpiration() {
 		return expiration; 
-	}
-
-	@Override
-	public boolean isPersistent() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 }

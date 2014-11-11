@@ -4,7 +4,7 @@ import java.util.Date;
 import edu.uga.dawgtrades.model.Membership;
 
 
-public class MembershipClass implements Membership {
+public class MembershipClass extends PersistableClass implements Membership {
 
 	@Override
 	public long getId() {

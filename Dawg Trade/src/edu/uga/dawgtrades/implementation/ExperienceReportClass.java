@@ -6,7 +6,7 @@ import edu.uga.dawgtrades.model.ExperienceReport;
 import edu.uga.dawgtrades.model.RegisteredUser;
 
 
-public class ExperienceReportClass implements ExperienceReport {
+public class ExperienceReportClass extends PersistableClass implements ExperienceReport {
 
 	@Override
 	public long getId() {

@@ -15,7 +15,7 @@ import edu.uga.dawgtrades.model.ObjectModel;
 import edu.uga.dawgtrades.model.RegisteredUser;
 
 
-public class ObjectModelClass implements ObjectModel {
+public class ObjectModelClass extends PersistableClass implements ObjectModel {
 
 	@Override
 	public Category createCategory(Category parent, String name)
