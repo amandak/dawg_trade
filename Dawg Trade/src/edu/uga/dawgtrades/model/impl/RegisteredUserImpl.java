@@ -5,6 +5,31 @@ import edu.uga.dawgtrades.persist.impl.PersistableImpl;
 
 public class RegisteredUserImpl extends PersistableImpl implements RegisteredUser {
 
+	private String name;
+	private String firstName;
+	private String lastName;
+	private String password;
+	private boolean isAdmin;
+	private String email;
+	private String phone;
+	private boolean canText;
+	
+	public RegisteredUserImpl(){}
+
+	public RegisteredUserImpl(String name, String firstName, String lastName,
+			String password, boolean isAdmin, String email, String phone,
+			boolean canText) {
+		super();
+		this.name = name;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.password = password;
+		this.isAdmin = isAdmin;
+		this.email = email;
+		this.phone = phone;
+		this.canText = canText;
+	}
+	
 	public long getID() {
 		// TODO Auto-generated method stub
 		return -1;
@@ -30,98 +55,82 @@ public class RegisteredUserImpl extends PersistableImpl implements RegisteredUse
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return name;
 	}
 
 	@Override
 	public void setName(String name) {
-		// TODO Auto-generated method stub
-		
+		this.name = name;
 	}
 
 	@Override
 	public String getFirstName() {
-		// TODO Auto-generated method stub
-		return null;
+		return firstName;
 	}
 
 	@Override
 	public void setFirstName(String firstName) {
-		// TODO Auto-generated method stub
-		
+		this.firstName = firstName;
 	}
 
 	@Override
 	public String getLastName() {
-		// TODO Auto-generated method stub
-		return null;
+		return lastName;
 	}
 
 	@Override
 	public void setLastName(String lastName) {
-		// TODO Auto-generated method stub
-		
+		this.lastName = lastName;
 	}
 
 	@Override
 	public String getPassword() {
-		// TODO Auto-generated method stub
-		return null;
+		return password;
 	}
 
 	@Override
 	public void setPassword(String password) {
-		// TODO Auto-generated method stub
-		
+		this.password = password;
 	}
 
 	@Override
 	public boolean getIsAdmin() {
-		// TODO Auto-generated method stub
-		return false;
+		return isAdmin;
 	}
 
 	@Override
 	public void setIsAdmin(boolean isAdmin) {
-		// TODO Auto-generated method stub
-		
+		this.isAdmin = isAdmin;
 	}
 
 	@Override
 	public String getEmail() {
-		// TODO Auto-generated method stub
-		return null;
+		return email;
 	}
 
 	@Override
 	public void setEmail(String email) {
-		// TODO Auto-generated method stub
-		
+		this.email = email;
 	}
 
 	@Override
 	public String getPhone() {
-		// TODO Auto-generated method stub
-		return null;
+		return phone;
 	}
 
 	@Override
 	public void setPhone(String phone) {
-		// TODO Auto-generated method stub
-		
+		this.phone = phone;
 	}
 
 	@Override
 	public boolean getCanText() {
-		// TODO Auto-generated method stub
-		return false;
+		return canText;
 	}
 
 	@Override
 	public void setCanText(boolean canText) {
-		// TODO Auto-generated method stub
-		
+		this.canText = canText;
 	}
 
 }
