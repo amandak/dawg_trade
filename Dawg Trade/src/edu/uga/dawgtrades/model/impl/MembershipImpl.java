@@ -7,6 +7,17 @@ import edu.uga.dawgtrades.persist.impl.PersistableImpl;
 
 public class MembershipImpl extends PersistableImpl implements Membership {
 
+	private float price;
+	private Date date;
+	
+	public MembershipImpl(float price, Date date) {
+		super();
+		this.price = price;
+		this.date = date;
+	}
+	
+	public MembershipImpl(){}
+	
 	@Override
 	public long getId() {
 		// TODO Auto-generated method stub
@@ -27,20 +38,17 @@ public class MembershipImpl extends PersistableImpl implements Membership {
 
 	@Override
 	public float getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
+		return price;
 	}
 
 	@Override
 	public void setPrice(float price) {
-		// TODO Auto-generated method stub
-		
+		this.price = price;
 	}
 
 	@Override
 	public Date getDate() {
-		// TODO Auto-generated method stub
-		return null;
+		return date;
 	}
 
 }

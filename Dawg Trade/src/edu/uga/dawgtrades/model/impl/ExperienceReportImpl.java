@@ -9,6 +9,24 @@ import edu.uga.dawgtrades.persist.impl.PersistableImpl;
 
 public class ExperienceReportImpl extends PersistableImpl implements ExperienceReport {
 
+	private int rating;
+	private String report;
+	private Date date;
+	private RegisteredUser reviewer;
+	private RegisteredUser reviewed;
+	
+	public ExperienceReportImpl(){};
+	
+	public ExperienceReportImpl(int rating, String report, Date date,
+			RegisteredUser reviewer, RegisteredUser reviewed) {
+		super();
+		this.rating = rating;
+		this.report = report;
+		this.date = date;
+		this.reviewer = reviewer;
+		this.reviewed = reviewed;
+	}
+	
 	@Override
 	public long getId() {
 		// TODO Auto-generated method stub
@@ -29,62 +47,56 @@ public class ExperienceReportImpl extends PersistableImpl implements ExperienceR
 
 	@Override
 	public int getRating() {
-		// TODO Auto-generated method stub
-		return 0;
+		return rating;
 	}
 
 	@Override
 	public void setRating(int rating) throws DTException {
-		// TODO Auto-generated method stub
+		if (rating<1 || rating>5){
+			throw new DTException("rating is an invalid number");
+		}
+		this.rating = rating;
 		
 	}
 
 	@Override
 	public String getReport() {
-		// TODO Auto-generated method stub
-		return null;
+		return report;
 	}
 
 	@Override
 	public void setReport(String report) {
-		// TODO Auto-generated method stub
-		
+		this.report = report;
 	}
 
 	@Override
 	public Date getDate() {
-		// TODO Auto-generated method stub
-		return null;
+		return date;
 	}
 
 	@Override
 	public void setDate(Date date) {
-		// TODO Auto-generated method stub
-		
+		this.date = date;
 	}
 
 	@Override
 	public RegisteredUser getReviewer() {
-		// TODO Auto-generated method stub
-		return null;
+		return reviewer;
 	}
 
 	@Override
 	public void setReviewer(RegisteredUser reviewer) {
-		// TODO Auto-generated method stub
-		
+		this.reviewer = reviewer;
 	}
 
 	@Override
 	public RegisteredUser getReviewed() {
-		// TODO Auto-generated method stub
-		return null;
+		return reviewed;
 	}
 
 	@Override
 	public void setReviewed(RegisteredUser reviewed) {
-		// TODO Auto-generated method stub
-		
+		this.reviewed = reviewed;
 	}
 
 }
