@@ -29,6 +29,7 @@ public class ObjectModelImpl implements ObjectModel {
 		Category newCategory = new CategoryImpl();
 		newCategory.setName(name);
 		newCategory.setParentId(parent.getId());
+		newcategory.setId(-1);
 		
 		return newCategory;
 	}
@@ -76,6 +77,7 @@ public class ObjectModelImpl implements ObjectModel {
 		
 		newAttrType.setName(name);
 		newAttrType.setCategoryId(category.getId());
+		newAttrType.setId(-1);
 		
 		return newAttrType;
 	}
