@@ -20,7 +20,7 @@ public abstract class DbAccessConfig
     /** 
      * The database server name for the connection pool
      */
-    static final String DB_SERVER_NAME = "localhost"; //TODO change this
+    static final String DB_SERVER_NAME = "uml.cs.uga.edu";
 
     /** 
      * The JDBC connection string/URL.
