@@ -1,3 +1,5 @@
+package edu.uga.dawgtrades.persist.impl;
+
 /**
  * This class defines the parameters that are used when accessing the Database using JDBC.
  * 
