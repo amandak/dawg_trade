@@ -1,6 +1,8 @@
 package edu.uga.dawgtrades.model.impl;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.ListIterator;
 
 import edu.uga.dawgtrades.model.Attribute;
 import edu.uga.dawgtrades.model.AttributeType;
@@ -20,6 +22,16 @@ public class ObjectModelImpl implements ObjectModel {
 	@Override
 	public Category createCategory(Category parent, String name)
 			throws DTException {
+		
+		if(!parent.isPersistent())
+			throw new DTException("The parent category is not a persistent object.");
+		
+		Category newCategory = new CategoryImpl();
+		newCategory.setName(name);
+		newCategory.setParentId(parent.getId());
+		newCategory.setId(-1);
+		
+		return newCategory;
 	}
 
 	@Override
@@ -31,7 +43,17 @@ public class ObjectModelImpl implements ObjectModel {
 	@Override
 	public Iterator<Category> findCategory(Category modelCategory)
 			throws DTException {
-		// TODO Auto-generated method stub
+		
+		if(modelCategory == null) {
+			//Retrieve all categories
+		}
+		
+		long searchId = modelCategory.getId();
+		String searchName = modelCategory.getName();
+		long searchParent = modelCategory.getParentId();
+		
+		//Search for the categories based on which aren't null
+		
 		return null;
 	}
 
@@ -50,6 +72,14 @@ public class ObjectModelImpl implements ObjectModel {
 	@Override
 	public AttributeType createAttributeType(Category category, String name)
 			throws DTException {
+		
+		AttributeType newAttrType = new AttributeTypeImpl();
+		
+		newAttrType.setName(name);
+		newAttrType.setCategoryId(category.getId());
+		newAttrType.setId(-1);
+		
+		return newAttrType;
 	}
 
 	@Override
@@ -76,8 +106,16 @@ public class ObjectModelImpl implements ObjectModel {
 	public Item createItem(Category category, RegisteredUser user,
 			String identifier, String name, String description)
 			throws DTException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Item newItem = new ItemImpl();
+		
+		newItem.setOwnerId(category.getId()); 
+		newItem.setOwnerId(user.getId());
+		//newItem.setIdentifier(identifier); //May not be implemented
+		newItem.setName(name);
+		newItem.setDescription(description);
+		
+		return newItem;
 	}
 
 	@Override
@@ -88,7 +126,13 @@ public class ObjectModelImpl implements ObjectModel {
 
 	@Override
 	public Iterator<Item> findItem(Item modelItem) throws DTException {
-		// TODO Auto-generated method stub
+
+		if(modelItem == null) {
+			//Retrieve all Items
+		}
+		
+		//Get the items and stuff
+		
 		return null;
 	}
 
@@ -107,8 +151,14 @@ public class ObjectModelImpl implements ObjectModel {
 	@Override
 	public Attribute createAttribute(AttributeType attributeType, Item item,
 			String value) throws DTException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Attribute newAttr = new AttributeImpl();
+		
+		newAttr.setAttributeType(attributeType.getId());
+		newAttr.setItemId(item.getId());
+		newAttr.setValue(value);
+		
+		return newAttr;
 	}
 
 	@Override
@@ -132,8 +182,14 @@ public class ObjectModelImpl implements ObjectModel {
 	@Override
 	public Auction createAuction(Item item, float minPrice, Date expiration)
 			throws DTException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Auction newAuction = new AuctionImpl();
+		
+		newAuction.setItemId(item.getId());
+		newAuction.setMinPrice(minPrice);
+		newAuction.setExpiration(expiration);
+		
+		return newAuction;
 	}
 
 	@Override
@@ -165,14 +221,25 @@ public class ObjectModelImpl implements ObjectModel {
 	public RegisteredUser createRegisteredUser(String name, String firstName,
 			String lastName, String password, boolean isAdmin, String email,
 			String phone, boolean canText) throws DTException {
-		// TODO Auto-generated method stub
-		return null;
+
+		RegisteredUser newUser = new RegisteredUserImpl();
+		
+		newUser.setName(name);
+		newUser.setFirstName(firstName);
+		newUser.setLastName(lastName);
+		newUser.setPassword(password);
+		newUser.setIsAdmin(isAdmin);
+		newUser.setEmail(email);
+		newUser.setPhone(phone);
+		newUser.setCanText(canText);
+		
+		return newUser;
 	}
 
 	@Override
 	public RegisteredUser createRegisteredUser() {
 		
-		return new RegisteredUserClass();
+		return new RegisteredUserImpl();
 	}
 
 	@Override
@@ -199,8 +266,13 @@ public class ObjectModelImpl implements ObjectModel {
 	@Override
 	public Bid createBid(Auction auction, RegisteredUser user, float price)
 			throws DTException {
-		// TODO Auto-generated method stub
-		return null;
+
+		Bid newBid = new BidImpl();
+		
+		newBid.setAmount(price);
+		//Other setters?
+		
+		return newBid;
 	}
 
 	@Override
@@ -231,8 +303,16 @@ public class ObjectModelImpl implements ObjectModel {
 	public ExperienceReport createExperienceReport(RegisteredUser reviewer,
 			RegisteredUser reviewed, int rating, String report, Date date)
 			throws DTException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		ExperienceReport newExprRep = new ExperienceReportImpl();
+		
+		newExprRep.setReviewer(reviewer);
+		newExprRep.setReviewed(reviewed);
+		newExprRep.setRating(rating);
+		newExprRep.setReport(report);
+		newExprRep.setDate(date);
+		
+		return newExprRep;
 	}
 
 	@Override
@@ -265,8 +345,12 @@ public class ObjectModelImpl implements ObjectModel {
 	@Override
 	public Membership createMembership(float price, Date date)
 			throws DTException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Membership newMembership = new MembershipImpl();
+		newMembership.setPrice(price);
+		//Set date
+		
+		return newMembership;
 	}
 
 	@Override
@@ -289,8 +373,10 @@ public class ObjectModelImpl implements ObjectModel {
 
 	@Override
 	public Category getParent(Category category) throws DTException {
-		
-		category.getParentId();  
+
+		Category modelCategory = new CategoryImpl();
+		modelCategory.setId(category.getParentId()); 
+		return modelCategory;
 	}
 
 	@Override
@@ -301,14 +387,27 @@ public class ObjectModelImpl implements ObjectModel {
 
 	@Override
 	public Category getCategory(AttributeType attributeType) throws DTException {
-		// TODO Auto-generated method stub
-		return null;
+
+		if(!attributeType.isPersistent()) 
+			throw new DTException("Attribute type is not persistent.");
+		
+		else {
+			Category category = new CategoryImpl();
+			category.setId(attributeType.getCategoryId());
+			
+			if(!findCategory(category).hasNext())
+				throw new DTException("No such category found.");
+			else
+				return findCategory(category).next();
+		}
 	}
 
 	@Override
 	public Iterator<AttributeType> getAttributeType(Category category)
 			throws DTException {
-		// TODO Auto-generated method stub
+
+		//Get the Category's AttributeTypes
+		
 		return null;
 	}
 
@@ -338,8 +437,17 @@ public class ObjectModelImpl implements ObjectModel {
 
 	@Override
 	public RegisteredUser getRegisteredUser(Item item) throws DTException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		if(!item.isPersistent())
+			throw new DTException("Item is not persistent");
+		
+		else {
+			
+			/*RegisteredUser regUser = new RegisteredUserImpl();
+			regUser.setId(item.getOwnerId());
+			return regUser;*/
+			return null;
+		}
 	}
 
 	@Override
@@ -351,7 +459,10 @@ public class ObjectModelImpl implements ObjectModel {
 
 	@Override
 	public Item getItem(Auction auction) throws DTException {
-		// TODO Auto-generated method stub
+
+		/*Item item = new ItemImpl();
+		item.setId(auction.getId());
+		return item;*/
 		return null;
 	}
 
